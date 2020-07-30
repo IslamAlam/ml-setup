@@ -1,0 +1,1 @@
+desktop-file-install --dir="$HOME/.local/share/applications"  jupyter.desktop
