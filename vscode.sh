@@ -38,3 +38,4 @@ Exec=$HOME/.local/share/code/bin/code --new-window
 Icon=$HOME/.local/share/code/resources/app/resources/linux/code.png
 EOF
 
+desktop-file-install --dir="$HOME/.local/share/applications"  $HOME/Desktop/code.desktop

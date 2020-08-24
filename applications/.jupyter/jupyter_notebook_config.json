@@ -1,0 +1,10 @@
+{
+  "NotebookApp": {
+    "nbserver_extensions": {
+      "jupyterlab_git": true,
+      "jupyterlab_iframe.extension": true,
+      "jupyterlab_code_formatter": true,
+      "jupyterlab_gitplus.extension": true
+    }
+  }
+}

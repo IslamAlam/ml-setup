@@ -1,0 +1,5 @@
+{ 
+    // Font family
+    // The font family used to render text.
+    "fontFamily": "MesloLGS NF"
+}
