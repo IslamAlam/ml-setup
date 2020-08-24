@@ -2,14 +2,13 @@
 
 
 NB_USER=$USER
-CONDA_DIR=$HOME/.local/apps/miniconda
-BASE_DIR=$HOME/.local/apps/
+CONDA_DIR=$ROOT_DIR/conda
+BASE_DIR=$ROOT_DIR/
 
 # Install Tini
 conda install --quiet --yes 'tini=0.18.0' && \
     conda list tini | grep tini | tr -s ' ' | cut -d ' ' -f 1,2 >> $CONDA_DIR/conda-meta/pinned && \
     conda clean --all -f -y
-
 
 # Install Jupyter Notebook, Lab, and Hub
 # Generate a notebook server config
@@ -63,6 +62,7 @@ conda install --quiet --yes \
     'widgetsnbextension=3.5.*'\
     'xlrd=1.2.*'
     conda clean --all -f -y
+    pip install --upgrade jupyterlab-git
     # Install Debugger in Jupyter Lab
     pip install --no-cache-dir xeus-python
     jupyter labextension install @jupyterlab/debugger --no-build
@@ -135,12 +135,12 @@ python -c "import matplotlib.pyplot"
 
 
 
-# conda install -c conda-forge jupyter_contrib_nbextensions
+conda install -c conda-forge jupyter_contrib_nbextensions
 
 
 # install Julia packages in /opt/julia instead of $HOME
-JULIA_DEPOT_PATH=$HOME/.local/apps/julia
-JULIA_PKGDIR=$HOME/.local/apps/julia
+JULIA_DEPOT_PATH=$ROOT_DIR/julia
+JULIA_PKGDIR=$ROOT_DIR/julia
 JULIA_VERSION=1.4.1
 
 cd /tmp
