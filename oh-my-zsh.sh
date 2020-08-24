@@ -26,7 +26,7 @@ if ! hash zsh 2>/dev/null; then
     cd ..
     rm -rf fonts
     # Install plugins
-    apt-get install -y --no-install-recommends autojump git-flow
+    sudo apt-get install -y --no-install-recommends autojump git-flow
     yes | sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -38,7 +38,7 @@ if ! hash zsh 2>/dev/null; then
     printf "export ZSH=\"$HOME/.oh-my-zsh\"\nZSH_THEME=\"powerlevel10k/powerlevel10k\"\nDISABLE_AUTO_UPDATE=\"true\"\nZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=\"fg=245\"\nplugins=(git k extract colorize pip npm zsh-256color supervisor command-not-found autojump colored-man-pages git-flow git-extras httpie python zsh-autosuggestions history-substring-search zsh-completions zsh-syntax-highlighting)\nsource \$ZSH/oh-my-zsh.sh\nLS_COLORS=\"\"\nexport LS_COLORS\n" > ~/.zshrc 
     # TODO add z
     # Other good themes: avit, sorin, clean
-    cp -r applications/fonts/NerdFonts/ /usr/share/fonts/
+    sudo cp -r applications/fonts/NerdFonts/ /usr/share/fonts/
     fc-cache -f -v
 else
     echo "ZSH is already installed"
