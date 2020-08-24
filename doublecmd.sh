@@ -33,3 +33,8 @@ Keywords=folder;manager;explore;disk;filesystem;orthodox;copy;queue;queuing;oper
 Comment[ru]=Double Commander — это кроссплатформенный двухпанельный файловый менеджер с открытым кодом.
 
 EOF
+
+chmod +x $HOME/Desktop/$FolderName.desktop
+
+desktop-file-install --dir="$HOME/.local/share/applications" $HOME/Desktop/$FolderName.desktop
+chmod +x $HOME/.local/share/applications/$FolderName.desktop
